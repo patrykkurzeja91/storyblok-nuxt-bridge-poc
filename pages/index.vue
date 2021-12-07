@@ -6,10 +6,18 @@
       :key="story.content._uid"
       :blok="story.content"
     />
+    <div class="pt-120">
+      dasdasdasdasdasdasdasdasdasdasdasasd
+      as
+    </div>
+    <div class="mb-32 mt-8">
+      dasdasdasdasdasdasdasdasdasdasdasasd
+      as
+    </div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   layout: 'default',
   asyncData (context) {

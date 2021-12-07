@@ -26,11 +26,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import {
-// computed,
-} from '#app'
-
+<script>
 export default {
   props: {
     blok: {

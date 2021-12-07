@@ -1,7 +1,7 @@
 {
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "target": "ES2018",
+    "target": "ES2021",
     "module": "ESNext",
     "moduleResolution": "Node",
     "lib": [
@@ -29,6 +29,9 @@
       "@nuxtjs/axios",
       "@types/node"
     ]
+  },
+  "vueCompilerOptions": {
+       "experimentalCompatMode": 2
   },
   "exclude": [
     "node_modules",

@@ -1,7 +1,7 @@
 # nuxt-bridge-test
 ## Overall idea
 
-This is PoC of nuxt bridge and nuxt3 with Storyblok as headless CMS.
+This is PoC of nuxt bridge with Storyblok as headless CMS.
 For now tailwind doesn't work properly so it is connected by CDN.
 Everything else should work. To make it work basic Storyblok configuration (with initial template) is needed
 ## Build Setup
