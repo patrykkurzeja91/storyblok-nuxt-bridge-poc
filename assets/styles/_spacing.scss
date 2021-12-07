@@ -1,0 +1,98 @@
+@each $name, $col in $columns {
+  .col-md-#{$name} {
+    flex: 1 0 auto;
+    width: 100%;
+
+    @media (min-width: $breakpoint-md) {
+      width: $col !important;
+    }
+  }
+  .col-lg-#{$name} {
+    flex: 1 0 auto;
+    width: 100%;
+
+    @media (min-width: $breakpoint-lg) {
+      width: $col !important;
+    }
+  }
+}
+
+@each $name, $padding in $spacings {
+  .#{$name} {
+    &-120 {
+      #{$padding}: 96px;
+
+      @media (min-width: $breakpoint-lg) {
+        #{$padding}: 120px;
+      }
+    }
+
+    &-80 {
+      #{$padding}: 64px;
+
+      @media (min-width: $breakpoint-lg) {
+        #{$padding}: 80px;
+      }
+    }
+
+    &-64 {
+      #{$padding}: 48px;
+
+      @media (min-width: $breakpoint-lg) {
+        #{$padding}: 64px;
+      }
+    }
+
+    &-56 {
+      #{$padding}: 40px;
+
+      @media (min-width: $breakpoint-lg) {
+        #{$padding}: 56px;
+      }
+    }
+
+    &-48 {
+      #{$padding}: 36px;
+
+      @media (min-width: $breakpoint-lg) {
+        #{$padding}: 48px;
+      }
+    }
+
+    &-40 {
+      #{$padding}: 32px;
+
+      @media (min-width: $breakpoint-lg) {
+        #{$padding}: 40px;
+      }
+    }
+
+    &-32 {
+      #{$padding}: 28px;
+
+      @media (min-width: $breakpoint-lg) {
+        #{$padding}: 32px;
+      }
+    }
+
+    &-20 {
+      #{$padding}: 16px;
+
+      @media (min-width: $breakpoint-lg) {
+        #{$padding}: 20px;
+      }
+    }
+
+    &-16 {
+      #{$padding}: 16px;
+    }
+
+    &-12 {
+      #{$padding}: 12px;
+    }
+
+    &-8 {
+      #{$padding}: 8px;
+    }
+  }
+}

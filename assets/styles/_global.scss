@@ -1,0 +1,515 @@
+// @import url("https://rsms.me/inter/inter.css");
+// @import url("https://use.typekit.net/llx2fbe.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: $font-family-p;
+  font-size: $font-size-p;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-p;
+  color: $color-text;
+}
+
+/*****************************************************************************
+ Typography
+ *****************************************************************************/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-headings;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-headings;
+  color: $color-headings;
+  font-variant-ligatures: common-ligatures;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  letter-spacing: $letter-spacing-h1;
+}
+
+h2,
+.h2-style {
+  margin-bottom: 22px;
+  font-size: $font-size-h2;
+  letter-spacing: $letter-spacing-h2;
+}
+
+h3,
+.h3-style {
+  margin-bottom: 20px;
+  font-size: $font-size-h3;
+  letter-spacing: $letter-spacing-h3;
+}
+
+h4 {
+  margin-bottom: 18px;
+  font-size: $font-size-h4;
+  letter-spacing: $letter-spacing-h4;
+}
+
+h5 {
+  margin-bottom: 8px;
+  font-size: $font-size-h5;
+  letter-spacing: $letter-spacing-h5;
+}
+
+h6 {
+  margin-bottom: 14px;
+  font-size: $font-size-h6;
+}
+
+.subtitle {
+  font-family: $font-family-p;
+  font-size: $font-size-p-extra-small;
+  font-weight: $font-weight-semibold;
+  color: $color-black;
+  text-transform: uppercase;
+  letter-spacing: 0.15px;
+}
+
+p,
+li {
+  letter-spacing: $letter-spacing-p;
+}
+
+.p--large {
+  font-size: $font-size-p-large;
+  letter-spacing: $letter-spacing-p-large;
+}
+
+.p--small {
+  font-size: $font-size-p-small;
+  letter-spacing: $letter-spacing-p-small;
+}
+
+.p--x-small {
+  font-size: $font-size-p-extra-small;
+  letter-spacing: $letter-spacing-p-small;
+}
+
+strong {
+  font-weight: $font-weight-semibold;
+  color: $color-headings;
+}
+
+.richtext {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*****************************************************************************
+ Links
+ *****************************************************************************/
+
+// a {
+//   color: $color-link;
+//   text-decoration: none;
+//   letter-spacing: $letter-spacing-p;
+//   transition: $transition-link-base;
+// }
+
+// a:hover {
+//   text-decoration: underline;
+// }
+
+/*****************************************************************************
+ Form elements
+ *****************************************************************************/
+
+// Just reset styles
+button {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+// CSS component approach. It allows us to use .button class on <a> and <button> elements
+.button {
+  display: inline-block;
+  max-width: 100%;
+  padding: 12px 32px;
+  overflow: hidden;
+  font-size: $font-size-p-small;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-p;
+  color: $color-white;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: $color-primary;
+  border-radius: 30px;
+  transition: all 0.25s;
+
+  &:focus {
+    background-color: $color-primary;
+    outline: none;
+    box-shadow: 0 0 0 3px #bcd8ff;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: $color-blue-700;
+  }
+}
+
+.button--secondary {
+  padding: 17px 31px;
+  font-weight: $font-weight-medium;
+  color: $color-link;
+  background-color: transparent;
+  border: 1px solid $color-primary;
+
+  &:focus {
+    color: $color-link;
+    background-color: transparent;
+  }
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-primary;
+  }
+}
+
+.button--success {
+  background-color: $color-green;
+
+  &:hover,
+  &:focus {
+    background-color: $color-green;
+  }
+}
+
+.button--large {
+  padding: 18px 32px;
+}
+
+// When a button has a sibling
+.button--in-a-row {
+  margin: 10px;
+
+  @media (min-width: 500px) {
+    margin: 0 10px;
+  }
+}
+
+.button-with-icon {
+  display: inline-block;
+
+  &::before {
+    display: inline-block;
+    align-items: center;
+    margin: 0 8px -2px 0;
+    content: '';
+  }
+
+  // &--download {
+  //   &::before {
+  //     @include icon('@/assets/images/svg/16-download.svg', 16px, 16px);
+  //   }
+  // }
+}
+
+.toggle {
+  text-align: center;
+
+  &__button {
+    position: relative;
+    padding: $toggle-btn-natural-padding $toggle-btn-natural-padding 28px;
+    font-size: $font-size-p-extra-small;
+    font-weight: $font-weight-semibold;
+    color: $color-navy-400;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: color 0.12s ease, background-image 0.12s ease;
+
+    &::after {
+      position: absolute;
+      top: #{$font-size-p-extra-small * $line-height-p + $toggle-btn-natural-padding + 4px};
+      left: calc(50% - 8px);
+      width: 16px;
+      height: 16px;
+      content: '';
+      // background-image: url('@/assets/images/svg/16-toggle.svg');
+      background-repeat: no-repeat;
+      transition: background-image 0.12s ease, transform 0.2s ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-link;
+
+      &::after {
+        // background-image: url('@/assets/images/svg/16-toggle-blue.svg');
+      }
+    }
+
+    &:focus {
+      @include shadow-outline;
+    }
+
+    &--up {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+// Buttons placed next to each other
+.button-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.input-group {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: $font-size-p-small;
+}
+
+textarea {
+  height: 196px;
+  min-height: 50px;
+  resize: vertical;
+}
+
+input {
+  display: block;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: $font-size-p-small;
+  line-height: $line-height-p;
+  color: $color-text;
+  background-color: $color-white;
+  border: 1px solid $color-gray-600;
+  border-radius: $border-radius-small;
+  outline: 0;
+  appearance: none;
+}
+
+input,
+textarea {
+  @extend input;
+
+  &:hover {
+    border: 1px solid $color-navy-200;
+  }
+
+  &:focus {
+    padding: 11px 15px;
+    border: 2px solid $color-primary;
+  }
+
+  &:disabled {
+    color: $color-navy-400;
+    background-color: $color-gray-200;
+  }
+
+  &::placeholder {
+    color: $color-navy-400;
+  }
+
+  &.input--error {
+    padding: 11px 15px;
+    border: 2px solid $color-red-700 !important;
+  }
+}
+
+select {
+  @extend input;
+
+  padding-right: 36px;
+  background-color: $color-white;
+  // background-image: url('@/assets/images/svg/12-chevron-down.svg');
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+
+  &:focus {
+    background-position: center right 11px;
+  }
+}
+
+input[type=checkbox] {
+  // Hides it from the interface but keeps it in the DOM (accessibility)
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  border: 0;
+}
+
+.error {
+  margin-top: 8px;
+  font-size: $font-size-p-small;
+  color: $color-red-800;
+}
+
+.error--block {
+  padding: 20px;
+  margin-bottom: 24px;
+  background-color: $color-red-600;
+  border-radius: $border-radius-base;
+
+  p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.required {
+  color: $color-red-800;
+}
+
+/*****************************************************************************
+ Lists
+ *****************************************************************************/
+
+.list {
+  &__item {
+    position: relative;
+    padding-left: 28px;
+  }
+}
+
+.list__item::before {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  content: "";
+}
+
+.list__item--point::before {
+  // @include icon('@/assets/images/svg/16-list-bullet.svg', 16px, 16px);
+}
+
+.list__item--benefit::before {
+  top: 5px;
+
+  // @include icon('@/assets/images/svg/16-list-benefit.svg', 16px, 16px);
+}
+
+/*****************************************************************************
+ Images
+ *****************************************************************************/
+
+img {
+  vertical-align: top;
+}
+
+picture > img {
+  width: 100%;
+}
+
+figcaption {
+  margin-top: 12px;
+  font-size: $font-size-p-extra-small;
+  color: $color-navy-400;
+  text-align: center;
+}
+
+.fluid-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/*****************************************************************************
+ Grid
+ *****************************************************************************/
+
+.grid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+  }
+}
+
+// Two columns
+.grid--two {
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 40px 8%;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+// Three columns
+.grid--three {
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px 6%;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+// Two columns, fallback. It won't be used if user browser supports CSS grid.
+.column--two {
+  @media (min-width: $breakpoint-md) {
+    flex: 0 0 46%;
+  }
+}
+
+// Two columns, fallback.
+.column--three {
+  @media (min-width: $breakpoint-md) {
+    flex: 0 0 29%;
+  }
+}
